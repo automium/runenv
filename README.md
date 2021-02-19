@@ -1,4 +1,4 @@
-# runiac (Run your infrasctructure as a code)
+# runenv (Run your infrasctructure as a code)
 
 ### This image contains:
 

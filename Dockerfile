@@ -22,4 +22,4 @@ COPY terraform-inventory /bin/terraform-inventory
 
 WORKDIR "/root"
 
-ENTRYPOINT [ "/bin/bash" ]
+#ENTRYPOINT [ "/bin/bash" ]

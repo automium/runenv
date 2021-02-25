@@ -1,7 +1,7 @@
-##Download base image ubuntu xenial
+##Download base image ubuntu focal
 FROM ubuntu:focal
 
-MAINTAINER Lorenzo Comotti
+MAINTAINER cloudfactory@irideos.it
 
 # Set Timezone
 ENV TZ=Europe/Rome
@@ -11,8 +11,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt -y update && apt -y install wget git jq bc curl unzip python3-pip apt-transport-https rsync python3-openstackclient
 
 ##Download terraform binary
-#RUN wget https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip && unzip terraform_0.14.7_linux_amd64.zip -d /bin/
-RUN wget https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip && unzip terraform_0.11.13_linux_amd64.zip -d /bin/
+RUN wget https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip && unzip terraform_0.14.7_linux_amd64.zip -d /bin/
 
 ## add kubernetes repository
 RUN wget -qO - https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list && apt -y update 

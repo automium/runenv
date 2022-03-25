@@ -23,6 +23,6 @@ COPY terraform-inventory /bin/terraform-inventory
 
 # Add providers
 COPY init.tf /root/init.tf
-RUN terraform init && rm init.tf
+RUN cd /root && terraform init && rm init.tf
 
 WORKDIR "/root"

@@ -21,4 +21,8 @@ RUN apt -y install kubectl=1.18.16-00 && pip3 install ansible==2.9.6 && pip3 ins
 
 COPY terraform-inventory /bin/terraform-inventory
 
+# Add providers
+COPY init.tf /root/init.tf
+RUN terraform init && rm init.tf
+
 WORKDIR "/root"
